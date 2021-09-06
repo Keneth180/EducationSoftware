@@ -1,1 +1,0 @@
-#Documentos entregables para el sprint 0
