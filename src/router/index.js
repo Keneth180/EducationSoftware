@@ -1,4 +1,4 @@
-/* Es un ejemplo, se importa el midleware, en la variable rutas hay un json con las rutas. 
+//  Es un ejemplo, se importa el midleware, en la variable rutas hay un json con las rutas. 
 import Vue from "vue";
 import VueRouter from "vue-router";
 
@@ -6,19 +6,14 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: () => import("../components/CreateComponent"),
-  },
-  {
     path: "/view",
     name: "view",
-    component: () => import("../components/ListComponent"),
+    component: () => import("../components/Menu"),
   },
   {
     path: "/edit/:id",
     name: "edit",
-    component: () => import("../components/EditComponent"),
+    component: () => import("../components/Register"),
   },
 ];
 
@@ -29,4 +24,3 @@ const router = new VueRouter({
 });
 
 export default router;
-*/
