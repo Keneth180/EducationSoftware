@@ -1,34 +1,37 @@
 <template>
   <div id="app">
-    <header>
-      <nav>
-        <a id="logo" href="">
-          <img src="./assets/logo.jpg" alt="logo-software" />
-        </a>
-
-        <ul class="main-nav">
-          <li>
-            <a href="">About us</a>
-          </li>
-          <li>
-            <a href="">Sign in</a>
-          </li>
-        </ul>
-      </nav>
+    <header class="header">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu">☰</label>
+        </div>
+        <div class="logo">
+          <h1>Education Software</h1>
+        </div>
+        <nav class="menu">
+            <router-link to="/">Inicio</router-link>
+          <router-link to="/nosotros">Nosotros</router-link>
+        </nav>
+        <div class="container mt-5">
+          <router-view></router-view>
+        </div>
+      </div>
     </header>
-    <HelloWorld msg="" />
+    <Menu msg="" />
     <footer>&#169; EducationSoftware.com Terms of use Privacy</footer>
   </div>
 </template>
 
+//
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
+// import Menu from "./components/Menu.vue";
+// export default {
+//   name: "App",
+//   components: {
+//     Menu,
+//   },
+// };
+//
 </script>
 
 <style>
@@ -109,6 +112,7 @@ footer {
   width: 100%;
   align-items: center;
   background-color: gray;
+  color: #fff;
   padding: 50px;
 }
 </style>
