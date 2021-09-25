@@ -6,14 +6,34 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/view",
-    name: "view",
+    path: "/",
+    name: "home",
     component: () => import("../components/Menu"),
   },
+  // {
+  //   path: "/view",
+  //   name: "view",
+  //   component: () => import("../components/Menu"),
+  // },
   {
-    path: "/edit/:id",
-    name: "edit",
+    path: "/register",
+    name: "register",
     component: () => import("../components/Register"),
+  },
+  {
+    path: "/nosotros",
+    name: "nosotros",
+    component: () => import("../components/Nosotros.vue"),
+  },
+  {
+    path: "/update",
+    name: "update",
+    component: () => import("../components/Update.vue"),
+  },
+  {
+    path: "/info",
+    name: "info",
+    component: () => import("../components/InfoEstructuraDatos.vue"),
   },
 ];
 

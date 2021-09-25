@@ -1,26 +1,48 @@
 <template>
   <!-- Display Menú App -->
   <div class="container">
-    <header>
-      <nav>
-        <ul class="main-nav">
-          <li>
-            <a href="">Registro de notas</a>
-          </li>
-          <li>
-            <a href="">Actualización de notas</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <!-- <header class="header">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu">☰</label>
+        </div>
+        <div class="logo">
+          <h1>Education Software</h1>
+        </div>
+        <nav class="menu">
+          <a href="#">Inicio</a>
+          <a href="#">Nosotros</a>
+        </nav>
+      </div>
+    </header> -->
+    <div class="capa"></div>
+    <!--	--------------->
+    <input type="checkbox" id="btn-menu" />
+    <div class="container-menu">
+      <div class="cont-menu">
+        <nav>
+          <router-link to="/registrar">Registrar notas </router-link>
+          <router-link to="/registrar">Actualizar notas </router-link>
+          <!-- <a href="#">Suscribirse</a>
+          <a href="#">Facebook</a>
+          <a href="#">Youtube</a>
+          <a href="#">Instagram</a> -->
+        </nav>
+        <div class="container mt-5">
+          <router-view></router-view>
+        </div>
+        <label for="btn-menu">✖️</label>
+      </div>
+    </div>
 
     <main>
       <h2>Bienvenido al sistema Education Software</h2>
       <div class="box">
-        <a href="">
+        <router-link to="/registrar">
           <h3>Estrcutura de datos</h3>
+          <h4>Código:233</h4>
           <h4>Universidad X</h4>
-        </a>
+        </router-link>
       </div>
       <div class="box">
         <a href="">
@@ -29,7 +51,6 @@
         </a>
       </div>
     </main>
-    <footer>&#169; EducationSoftware.com Terms of use Privacy</footer>
   </div>
 </template>
 <script>
@@ -41,116 +62,148 @@ export default {
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-template .container {
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.1em;
-  line-height: 1.5em;
 }
-
-template {
-  overflow-y: hidden;
+body {
+  background: url("../assets/educacion.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
 }
-
-h2 {
-  text-align: center;
-  align-items: center;
+main h2 {
+  margin-top: 50px;
+  color: #fff;
 }
-
-header {
-  flex: 0 0 auto;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  background-color: rgb(71, 140, 219);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.container main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 1 auto;
-  position: relative;
-  overflow-y: auto;
-}
-
-.container nav {
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 25px;
-}
-
-.main-nav {
-  list-style: none;
-}
-
-.main-nav li > a {
-  text-decoration: none;
-  color: antiquewhite;
-}
-
 .box {
-  border: 1px solid black;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  text-align: center;
-  background-color: rgb(177, 177, 243);
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  border-radius: 5px;
+  justify-content: center;
+  align-content: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.795);
 }
-
 .box > a {
   text-decoration: none;
 }
-
-.box > a:hover {
-  color: rgb(113, 113, 160);
+.capa {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(35, 37, 134, 0.6);
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
-
-.container footer {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: gray;
-  padding: 40px;
+/*Estilos para el encabezado*/
+.header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-
-.title-header-footer {
-  color: aliceblue;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
-
-@media screen and (min-width: 640px) {
-  main {
-    display: flex;
-  }
-
-  .box {
-    margin: 0 250px 25px 250px;
-  }
-  header {
-    justify-content: flex-end;
-  }
-
-  .main-nav {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .main-nav li > a {
-    justify-content: flex-start;
-    margin-right: 10px;
-    background-color: #c2c8d1;
-    padding: 5px;
-    border-radius: 13px;
-    color: aliceblue;
-  }
-
-  .main-nav > li > a:hover {
-    background-color: rgb(71, 140, 219);
-  }
+.container .btn-menu,
+.logo {
+  float: left;
+  line-height: 100px;
 }
+.container .btn-menu label {
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+.logo h1 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.container .menu {
+  float: right;
+  line-height: 100px;
+}
+.container .menu a {
+  display: inline-block;
+  padding: 15px;
+  line-height: normal;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.container .menu a:hover {
+  border-bottom: 2px solid #c7c7c7;
+  padding-bottom: 5px;
+}
+/*Fin de Estilos para el encabezado*/
+
+/*Menù lateral*/
+#btn-menu {
+  display: none;
+}
+.container-menu {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu {
+  opacity: 1;
+  visibility: visible;
+}
+.cont-menu {
+  width: 100%;
+  max-width: 250px;
+  background: #3c3ad6;
+  height: 100vh;
+  position: relative;
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu {
+  transform: translateX(0%);
+}
+.cont-menu nav {
+  transform: translateY(15%);
+}
+.cont-menu nav a {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  color: #c7c7c7;
+  border-left: 5px solid transparent;
+  transition: all 400ms ease;
+}
+.cont-menu nav a:hover {
+  border-left: 5px solid #c7c7c7;
+  background: #1f1f1f;
+}
+.cont-menu label {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+/*Fin de Menù lateral*/
 </style>
