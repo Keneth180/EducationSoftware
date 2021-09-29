@@ -8,33 +8,33 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("../components/Menu"),
+    component: () => import("../components/Home"),
   },
-  // {
-  //   path: "/view",
-  //   name: "view",
-  //   component: () => import("../components/Menu"),
-  // },
   {
     path: "/register",
     name: "register",
     component: () => import("../components/Register"),
   },
   {
-    path: "/nosotros",
-    name: "nosotros",
-    component: () => import("../components/Nosotros.vue"),
+    path: "/inform",
+    name: "inform",
+    component: () => import("../components/Inform"),
   },
   {
-    path: "/update",
-    name: "update",
-    component: () => import("../components/Update.vue"),
+    path: "/disenio-interfaces",
+    name: "disenio-interfaces",
+    component: () => import("../components/Diseno"),
   },
   {
-    path: "/info",
-    name: "info",
-    component: () => import("../components/InfoEstructuraDatos.vue"),
+    path: "/estructura-datos",
+    name: "estructura-datos",
+    component: () => import("../components/EstructuraDatos"),
   },
+  {
+    path: "/programacion",
+    name: "programacion",
+    component: () => import("../components/Programacion"),
+  }
 ];
 
 const router = new VueRouter({
