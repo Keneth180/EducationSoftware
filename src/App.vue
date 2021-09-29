@@ -1,118 +1,112 @@
 <template>
-  <div id="app">
-    <header class="header">
-      <div class="container">
-        <div class="btn-menu">
-          <label for="btn-menu">☰</label>
+  <div class="app">
+    <!-- Nav bar -->
+    <div class="navbar-color">
+      <nav
+        class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row"
+      >
+        <div class="container">
+          <a class="navbar-brand float-left">Education Software</a>
+          <ul class="nav navbar-nav flex-row float-right">
+            <li class="nav-item">
+              <router-link class="nav-link pr-3" to="/">Inicio</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/register"
+                >Registrar notas</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/inform"
+                >Informe de notas</router-link
+              >
+            </li>
+          </ul>
         </div>
-        <div class="logo">
-          <h1>Education Software</h1>
-        </div>
-        <nav class="menu">
-            <router-link to="/">Inicio</router-link>
-          <router-link to="/nosotros">Nosotros</router-link>
-        </nav>
-        <div class="container mt-5">
-          <router-view></router-view>
-        </div>
+      </nav>
+    </div>
+
+    <!-- Router view -->
+    <div class="container mt-5">
+      <router-view></router-view>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Copyright -->
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.2);"
+      >
+        © 2021 Education Software
       </div>
-    </header>
-    <Menu msg="" />
-    <footer>&#169; EducationSoftware.com Terms of use Privacy</footer>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
   </div>
 </template>
 
-//
-<script>
-// import Menu from "./components/Menu.vue";
-// export default {
-//   name: "App",
-//   components: {
-//     Menu,
-//   },
-// };
-//
-</script>
-
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
-#app {
-  font-family: "Montserrat", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  overflow: hidden;
-  flex-direction: column;
-}
-header nav {
-  display: flex;
+.app {
+  background-color: #e9e9f07e;
 }
 
-img {
-  position: absolute;
-  top: 0;
-  width: 140px;
-  display: flex;
+nav.bg-primary {
+  background-color: #0b0940 !important;
 }
 h2 {
-  color: rgb(80, 75, 75);
-}
-h5 {
-  color: gray;
-}
-nav {
-  font-size: 18px;
-  padding-bottom: 10px;
-  justify-content: space-between;
-  padding-bottom: 0;
-  height: 70px;
-}
-ul {
   display: flex;
-  margin-right: 100px;
+  flex-direction: row;
+  align-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
 }
-input {
-  margin-top: 0.5em;
-  padding: 15px;
-  border-radius: 13px;
-  border: 2px solid #cbdcd3;
+.main-nav > li {
+  display: flex;
+  justify-content: center;
 }
-main {
-  overflow: hidden;
-}
-.main-nav {
-  list-style-type: none;
-}
-.main-nav > li > a {
+.nav-item {
   display: flex;
   justify-content: flex-end;
-  padding: 6px;
-  border-radius: 6px;
-  background-color: #c2c8d1;
+  margin-right: 20px;
 }
-.main-nav > li > a,
-#logo {
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+}
+.materias {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-link {
   text-decoration: none;
-  color: rgba(90, 12, 12, 0.7);
-  transition: 0.5s;
 }
-.main-nav > li > a {
-  margin-left: 40px;
+main {
+  display: flex;
 }
-.main-nav > li > a:hover {
-  background-color: rgb(93, 93, 241);
+footer.bg-light {
+  margin-top: 500px;
+  background-color: #010326 !important;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  align-items: center;
-  background-color: gray;
-  color: #fff;
-  padding: 50px;
+footer.text-center,
+.text-start {
+  color: #f8f8ff;
+}
+@media screen and (min-width: 1200px) {
+  body {
+    overflow: auto;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+  }
+  .materias {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
 }
 </style>

@@ -1,48 +1,36 @@
-<div class="row justify-content-center">
-    <div class="col-md-6">
-      <h3 class="text-center">Create Student</h3>
-      <form @submit.prevent="handleSubmitForm">
-        <div class="form-group">
-          <label>Name</label>
-          <input
-            type="text"
-            class="form-control"
-            v-model="student.name"
-            required
-          />
-        </div>
+<template>
 
-        <div class="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            class="form-control"
-            v-model="student.email"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input
-            type="text"
-            class="form-control"
-            v-model="student.phone"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <button class="btn btn-danger btn-block">Create</button>
-        </div>
-      </form>
-    </div>
-  </div>
+<main>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</main>
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-};
-</script>
+<style>
+</style>
