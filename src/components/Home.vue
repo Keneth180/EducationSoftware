@@ -1,10 +1,13 @@
 <template>
-  <main class="container-main">
-    <h3>Bienvenido</h3>
-    <p>
-      En este software encontrará los cursos que dicata para que pueda realizar
-      modificaciones, actualizaciones y ver informes de los cursos que dicta
-    </p>
+  <div class="container-main">
+    <section>
+      <h3>Bienvenido</h3>
+      <p>
+        En este software encontrará los cursos que dicata para que pueda
+        realizar modificaciones, actualizaciones y ver informes de los cursos
+        que dicta
+      </p>
+    </section>
 
     <div class="materias">
       <div class="card" style="width: 18rem;">
@@ -22,13 +25,14 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Docente: Juan Alberto</li>
-          <li class="list-group-item">Código: 12300 in</li>
+          <li class="list-group-item">Código: 12300</li>
           <li class="list-group-item">Universidad X</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Ingresar</a>
+          <router-link class="nav-link pr-3" to="/estructura-datos">Ingresar</router-link>
         </div>
       </div>
+      
       <div class="card" style="width: 18rem;">
         <img
           class="card-img-top"
@@ -44,11 +48,11 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Docente: Juan Alberto</li>
-          <li class="list-group-item">Código: 15400 in</li>
+          <li class="list-group-item">Código: 15400</li>
           <li class="list-group-item">Universidad X</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Ingresar</a>
+          <router-link class="nav-link pr-3" to="/programacion">Ingresar</router-link>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -70,9 +74,46 @@
           <li class="list-group-item">Universidad X</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Ingresar</a>
+          <router-link class="nav-link pr-3" to="/disenio-interfaces">Ingresar</router-link>
         </div>
       </div>
     </div>
+      <main>
+            <!-- Router view -->
+    <div class="container mt-5">
+      <router-view></router-view>
+    </div>
   </main>
+  </div>
+
 </template>
+
+<style>
+.materias {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-link {
+  text-decoration: none;
+}
+.container-main {
+  display: flex;
+  justify-content: center;
+}
+h3 {
+  color: #0b0940;
+  text-align: center;
+}
+section{
+  background-color: rgb(233, 197, 197);
+  border-radius: 3px;
+}
+
+@media screen and (min-width: 1200px) {
+  .materias {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+}
+</style>

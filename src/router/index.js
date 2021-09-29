@@ -19,6 +19,21 @@ const routes = [
     path: "/inform",
     name: "inform",
     component: () => import("../components/Inform"),
+  },
+  {
+    path: "/disenio-interfaces",
+    name: "disenio-interfaces",
+    component: () => import("../components/Diseno"),
+  },
+  {
+    path: "/estructura-datos",
+    name: "estructura-datos",
+    component: () => import("../components/EstructuraDatos"),
+  },
+  {
+    path: "/programacion",
+    name: "programacion",
+    component: () => import("../components/Programacion"),
   }
 ];
 

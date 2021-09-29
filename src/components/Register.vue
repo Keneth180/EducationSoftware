@@ -5,28 +5,25 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Código</th>
+      <th scope="col">Nota 1</th>
+      <th scope="col">Nota 2</th>
+      <th scope="col">Nota 3</th>
+      <th scope="col">Total</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td contenteditable="true">Jacinto</td>
+      <td>Lóopez</td>
+      <td>12435</td>
+      <td>2.5</td>
+      <td>3.5</td>
+      <td>5.0</td>
+      <td>4.0</td>
     </tr>
   </tbody>
 </table>

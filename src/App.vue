@@ -47,8 +47,14 @@
 </template>
 
 <style>
-.app {
-  background-color: #e9e9f07e;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap');
+body .app {
+  height: 100vh;
+   line-height: 1.3em;
+   font-family: 'Noto Sans Display', sans-serif;
+}
+nav{
+  padding-bottom: 30px!important;
 }
 
 nav.bg-primary {
@@ -60,6 +66,11 @@ h2 {
   align-content: center;
   color: rgb(255, 255, 255);
   font-size: 1.2em;
+}
+p{
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
 }
 .main-nav > li {
   display: flex;
@@ -76,15 +87,8 @@ h2 {
   justify-content: center;
   margin-top: 10px;
 }
-.materias {
-  display: flex;
-  flex-wrap: wrap;
-}
-.card-link {
-  text-decoration: none;
-}
-main {
-  display: flex;
+footer{
+  padding-top: 100px;
 }
 footer.bg-light {
   margin-top: 500px;
@@ -97,16 +101,6 @@ footer.text-center,
 @media screen and (min-width: 1200px) {
   body {
     overflow: auto;
-  }
-  main {
-    display: flex;
-    flex-direction: row;
-    overflow-y: auto;
-  }
-  .materias {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
   }
 }
 </style>
