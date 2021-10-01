@@ -12,6 +12,11 @@
               <router-link class="nav-link pr-3" to="/">Inicio</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/register-students"
+                >Registrar Estudiantes</router-link
+              >
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" to="/register"
                 >Registrar notas</router-link
               >
@@ -47,14 +52,14 @@
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap");
 body .app {
   height: 100vh;
-   line-height: 1.3em;
-   font-family: 'Noto Sans Display', sans-serif;
+  line-height: 1.3em;
+  font-family: "Noto Sans Display", sans-serif;
 }
-nav{
-  padding-bottom: 30px!important;
+nav {
+  padding-bottom: 30px !important;
 }
 
 nav.bg-primary {
@@ -67,7 +72,7 @@ h2 {
   color: rgb(255, 255, 255);
   font-size: 1.2em;
 }
-p{
+p {
   display: flex;
   justify-content: center;
   font-size: 1em;
@@ -87,7 +92,7 @@ p{
   justify-content: center;
   margin-top: 10px;
 }
-footer{
+footer {
   padding-top: 100px;
 }
 footer.bg-light {
