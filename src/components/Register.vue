@@ -5,25 +5,41 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
+      <th scope="col">Nombre completo</th>
       <th scope="col">Código</th>
-      <th scope="col">Nota 1</th>
-      <th scope="col">Nota 2</th>
-      <th scope="col">Nota 3</th>
-      <th scope="col">Total</th>
+      <th scope="col">Agregar notas</th>
+      <th scope="col">Editar notas</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td contenteditable="true">Jacinto</td>
-      <td>Lóopez</td>
+      <td contenteditable="true">Jacinto Lopez</td>
       <td>12435</td>
-      <td>2.5</td>
-      <td>3.5</td>
-      <td>5.0</td>
-      <td>4.0</td>
+      <td>
+        <button type="button" class="btn btn-success">Agregar notas</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-warning">Editar nota</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+      </td>
+    </tr>
+        <tr>
+      <th scope="row">1</th>
+      <td contenteditable="true">Jacinto Lopez</td>
+      <td>12435</td>
+      <td>
+        <button type="button" class="btn btn-success">Agregar notas</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-warning">Editar nota</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+      </td>
     </tr>
   </tbody>
 </table>
