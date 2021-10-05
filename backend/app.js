@@ -1,13 +1,56 @@
-const mongoose = require("mongoose");
+let express = require("express"),
+  cors = require("cors"),
+  mongoose = require("mongoose"),
+  database = require("./database"),
+  bodyParser = require("body-parser");
 
-const uri = "mongodb://localhost:27017/educationsoftware";
-const options = { useNewUrlParser: true, useCreateIndex: true };
+// Connect mongoDB
+mongoose.Promise = global.Promise;
+mongoose
+  .connect(database.db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(
+    () => {
+      console.log("Database connected");
+    },
+    (error) => {
+      console.log("Database could't be connected to: " + error);
+    }
+  );
 
-mongoose.connect(uri, options).then(
-  () => {
-    console.log("Conectado a DB");
-  },
-  (err) => {
-    console.log(err);
-  }
+const studentAPI = require("../backend/routes/students.route");
+const materiaAPI = require("../backend/routes/materias.route");
+// const grupoAPI = require("../backend/routes/grupos.route");
+const app = express();
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
 );
+app.use(cors());
+
+// API
+app.use("/api", studentAPI);
+app.use("/api/materias", materiaAPI)
+// app.use("/api/grupos", grupoAPI)
+
+// Create port
+const port = process.env.PORT || 4000;
+const server = app.listen(port, () => {
+  console.log("Connected to port " + server);
+});
+
+// Find 404
+app.use((req, res, next) => {
+  next(Error(404));
+});
+
+// error handler
+app.use(function(err, req, res) {
+  console.error(err.message);
+  if (!err.statusCode) err.statusCode = 500;
+  res.status(err.statusCode).send(err.message);
+});

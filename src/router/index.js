@@ -39,6 +39,11 @@ const routes = [
     path: "/register-students",
     name: "register-students",
     component: () => import("../components/RegisterStudents"),
+  },
+  {
+    path: "/add/:id",
+    name: "add",
+    component: () => import("../components/AgregarNotas"),
   }
 ];
 
