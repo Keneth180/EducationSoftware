@@ -44,6 +44,21 @@ const routes = [
     path: "/add/:id",
     name: "add",
     component: () => import("../components/AgregarNotas"),
+  },
+  {
+    path: "/edit/:id",
+    name: "edit",
+    component: () => import("../components/ActualizarEstructura"),
+  },
+  {
+    path: "/edit-prog/:id",
+    name: "edit-prog",
+    component: () => import("../components/ActualizarProg"),
+  },
+  {
+    path: "/edit-disenio/:id",
+    name: "edit-disenio",
+    component: () => import("../components/ActualizarDisenio"),
   }
 ];
 

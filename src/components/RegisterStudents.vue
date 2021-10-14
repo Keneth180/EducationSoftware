@@ -1,6 +1,6 @@
 <template>
   <div class="container-father">
-    <div class="container-register">
+    <!-- <div class="container-register">
       <form @submit.prevent="handleSubmitForm">
         <h2>Registrar estudiantes</h2>
         <div class="form-group">
@@ -28,7 +28,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
       </form>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -41,6 +41,8 @@ export default {
       student: {
         name: "",
         codigo: "",
+        nota1: 0,
+        nota2: 0,
       },
     };
   },
@@ -51,10 +53,13 @@ export default {
       axios
         .post(apiURL, this.student)
         .then(() => {
-          this.$router.push("/register");
+          this.$router.push("/estructura-datos");
           this.student = {
             name: "",
             codigo: "",
+            nota1: 0,
+            nota2: 0,
+
           };
         })
         .catch((error) => {
@@ -65,44 +70,3 @@ export default {
 };
 </script>
 
-<style>
-h2{
-  text-align: center;
-  color: black;
-}
-.container-register {
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-  height: 500px;
-  justify-content: center;
-  background-color: rgb(184, 185, 187);
-  border: 1px solid black;
-}
-.form-control {
-  margin-top: 5px;
-}
-button {
-  margin-bottom: 15px;
-}
-label {
-  margin-top: 10px;
-}
-button {
-  padding: 5px;
-  margin-top: 10px;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  margin-left: 200px;
-  margin-right: 200px;
-  justify-content: center;
-}
-.form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-</style>

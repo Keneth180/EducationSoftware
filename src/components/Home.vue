@@ -86,6 +86,15 @@
 </template>
 
 <style>
+.card{
+  margin: auto;
+  box-shadow: 10px 5px 5px #0b0940;
+}
+.card:hover{
+  box-shadow: -10px -5px 5px #0b0940;
+  
+}
+
 .materias {
   display: flex;
   flex-wrap: wrap;
@@ -104,13 +113,14 @@ h3 {
 section{
   background-color: rgb(233, 197, 197);
   border-radius: 3px;
+  margin-bottom: 20px;
+  box-shadow: 10px 5px 5px #0b0940;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 786px) {
   .materias {
     display: flex;
     justify-content: space-between;
-    margin-top: 100px;
   }
 }
 </style>

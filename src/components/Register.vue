@@ -1,6 +1,6 @@
 <template>
   <main>
-    <table class="table">
+    <!-- <table class="table">
       <thead>
         <tr>
           <th scope="col">Nombre completo</th>
@@ -38,7 +38,7 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </main>
 </template>
 <script>

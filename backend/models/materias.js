@@ -11,7 +11,7 @@ let materiaSchema = new Schema(
     },
     horas: {
       type: Number,
-    },
+    }
   },
   {
     collection: "materias",
