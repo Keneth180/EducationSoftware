@@ -1,13 +1,13 @@
 //importando paquetes y módulos necesarios
 const express = require("express");
-const studentRoute = express.Router();
+const studenProgtRoute = express.Router();
 
 
 // Student model
-let StudentModel = require("../models/student");
+let StudentProgModel = require("../models/studentProg");
 
-studentRoute.route("/").get((req, res) => {
-  StudentModel.find((error, data, next) => {
+studenProgtRoute.route("/").get((req, res) => {
+  StudentProgModel.find((error, data, next) => {
     if (error) {
       return next(error);
     } else {
@@ -17,8 +17,8 @@ studentRoute.route("/").get((req, res) => {
   });
 });
 
-studentRoute.route("/create-student").post((req, res, next) => {
-  StudentModel.create(req.body, (error, data) => {
+studenProgtRoute.route("/create-student-prog").post((req, res, next) => {
+  StudentProgModel.create(req.body, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -29,8 +29,8 @@ studentRoute.route("/create-student").post((req, res, next) => {
 });
 
 // Update student
-studentRoute.route("/add-student/:id").put((req, res, next) => {
-  StudentModel.findByIdAndUpdate(
+studenProgtRoute.route("/add-student-prog/:id").put((req, res, next) => {
+  StudentProgModel.findByIdAndUpdate(
     req.params.id,
     {
       $set: req.body,
@@ -47,8 +47,8 @@ studentRoute.route("/add-student/:id").put((req, res, next) => {
   );
 });
 
-studentRoute.route("/edit-student/:id").get((req, res) => {
-  StudentModel.findById(req.params.id, (error, data, next) => {
+studenProgtRoute.route("/edit-student-prog/:id").get((req, res) => {
+  StudentProgModel.findById(req.params.id, (error, data, next) => {
     if (error) {
       console.log(error);
       return next(error);
@@ -59,8 +59,8 @@ studentRoute.route("/edit-student/:id").get((req, res) => {
 });
 
 // Update student
-studentRoute.route("/update-student/:id").put((req, res, next) => {
-  StudentModel.findByIdAndUpdate(
+studenProgtRoute.route("/update-student-prog/:id").put((req, res, next) => {
+  StudentProgModel.findByIdAndUpdate(
     req.params.id,
     {
       $set: req.body,
@@ -78,8 +78,8 @@ studentRoute.route("/update-student/:id").put((req, res, next) => {
 });
 
 // Delete student
-studentRoute.route("/delete-student/:id").delete((req, res, next) => {
-  StudentModel.findByIdAndRemove(req.params.id, (error, data) => {
+studenProgtRoute.route("/delete-student-prog/:id").delete((req, res, next) => {
+  StudentProgModel.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -90,4 +90,4 @@ studentRoute.route("/delete-student/:id").delete((req, res, next) => {
   });
 });
 
-module.exports = studentRoute;
+module.exports = studenProgtRoute;

@@ -21,7 +21,9 @@ mongoose
   );
 
 const studentAPI = require("../backend/routes/students.route");
-const materiaAPI = require("../backend/routes/materias.route");
+const notas = require("../backend/routes/nota.route");
+const studentProgAPI = require("../backend/routes/studentProg.route");
+const studentDisenioAPI = require("../backend/routes/studentDisenio.route");
 // const grupoAPI = require("../backend/routes/grupos.route");
 const app = express();
 app.use(bodyParser.json());
@@ -34,8 +36,10 @@ app.use(cors());
 
 // API
 app.use("/api", studentAPI);
-app.use("/api/materias", materiaAPI)
-// app.use("/api/grupos", grupoAPI)
+app.use("/api/notas", notas);
+app.use("/api-prog" ,studentProgAPI);
+app.use("/api-disenio" ,studentDisenioAPI);
+
 
 // Create port
 const port = process.env.PORT || 4000;

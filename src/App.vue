@@ -1,69 +1,74 @@
 <template>
   <div class="app">
-    <!-- Nav bar -->
-    <div class="navbar-color">
-      <nav
-        class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row"
-      >
-        <div class="container">
-          <a class="navbar-brand float-left">Education Software</a>
-          <ul class="nav navbar-nav flex-row float-right">
-            <li class="nav-item">
-              <router-link class="nav-link pr-3" to="/">Inicio</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/register-students"
-                >Registrar Estudiantes</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/register"
-                >Registrar notas</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/inform"
-                >Informe de notas</router-link
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <header>
+      <div class="navbar-color">
+        <nav
+          class="
+            navbar navbar-dark
+            bg-primary
+            justify-content-between
+            flex-nowrap flex-row
+          "
+        >
+          <div class="container">
+            <a class="navbar-brand float-left">Education Software</a>
+            <ul class="nav navbar-nav flex-row float-right">
+              <li class="nav-item">
+                <router-link class="nav-link pr-3" to="/">Inicio</router-link>
+              </li>
 
-    <!-- Router view -->
-    <div class="container mt-5">
+              <li class="nav-item">
+                <router-link class="nav-link" to="/inform"
+                  >Informe general</router-link
+                >
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/register-students"
+                  >Iniciar Sesión</router-link
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container-main mt-5">
       <router-view></router-view>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-light text-center text-lg-start">
-      <!-- Copyright -->
-      <div
-        class="text-center p-3"
-        style="background-color: rgba(0, 0, 0, 0.2);"
-      >
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2021 Education Software
       </div>
-      <!-- Copyright -->
     </footer>
-    <!-- Footer -->
   </div>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap");
-body .app {
-  height: 100vh;
+.app {
+  height: 80vh;
   line-height: 1.3em;
   font-family: "Noto Sans Display", sans-serif;
 }
 nav {
   padding-bottom: 30px !important;
 }
+a.nav-link {
+  color: rgb(2, 2, 2) !important;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(230, 207, 207);
 
+}
+a.nav-link:hover {
+  background-color: #0b0940;
+  color: white !important;
+}
 nav.bg-primary {
   background-color: #0b0940 !important;
+  margin: auto !important;
 }
 h2 {
   display: flex;
@@ -89,6 +94,7 @@ p {
 .container-main {
   display: flex;
   flex-direction: column;
+  margin: 50px;
   justify-content: center;
   margin-top: 10px;
 }
@@ -96,16 +102,11 @@ footer {
   padding-top: 100px;
 }
 footer.bg-light {
-  margin-top: 500px;
+  margin-top: 50px;
   background-color: #010326 !important;
 }
 footer.text-center,
 .text-start {
   color: #f8f8ff;
-}
-@media screen and (min-width: 1200px) {
-  body {
-    overflow: auto;
-  }
 }
 </style>

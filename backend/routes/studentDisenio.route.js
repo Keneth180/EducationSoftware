@@ -1,13 +1,13 @@
 //importando paquetes y módulos necesarios
 const express = require("express");
-const studentRoute = express.Router();
+const studenDiseniotRoute = express.Router();
 
 
 // Student model
-let StudentModel = require("../models/student");
+let StudentDisenioModel = require("../models/studentDisenio");
 
-studentRoute.route("/").get((req, res) => {
-  StudentModel.find((error, data, next) => {
+studenDiseniotRoute.route("/").get((req, res) => {
+  StudentDisenioModel.find((error, data, next) => {
     if (error) {
       return next(error);
     } else {
@@ -17,8 +17,8 @@ studentRoute.route("/").get((req, res) => {
   });
 });
 
-studentRoute.route("/create-student").post((req, res, next) => {
-  StudentModel.create(req.body, (error, data) => {
+studenDiseniotRoute.route("/create-student-disenio").post((req, res, next) => {
+  StudentDisenioModel.create(req.body, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -29,8 +29,8 @@ studentRoute.route("/create-student").post((req, res, next) => {
 });
 
 // Update student
-studentRoute.route("/add-student/:id").put((req, res, next) => {
-  StudentModel.findByIdAndUpdate(
+studenDiseniotRoute.route("/add-student-disenio/:id").put((req, res, next) => {
+  StudentDisenioModel.findByIdAndUpdate(
     req.params.id,
     {
       $set: req.body,
@@ -47,8 +47,8 @@ studentRoute.route("/add-student/:id").put((req, res, next) => {
   );
 });
 
-studentRoute.route("/edit-student/:id").get((req, res) => {
-  StudentModel.findById(req.params.id, (error, data, next) => {
+studenDiseniotRoute.route("/edit-student-disenio/:id").get((req, res) => {
+  StudentDisenioModel.findById(req.params.id, (error, data, next) => {
     if (error) {
       console.log(error);
       return next(error);
@@ -59,8 +59,8 @@ studentRoute.route("/edit-student/:id").get((req, res) => {
 });
 
 // Update student
-studentRoute.route("/update-student/:id").put((req, res, next) => {
-  StudentModel.findByIdAndUpdate(
+studenDiseniotRoute.route("/update-student-disenio/:id").put((req, res, next) => {
+  StudentDisenioModel.findByIdAndUpdate(
     req.params.id,
     {
       $set: req.body,
@@ -78,8 +78,8 @@ studentRoute.route("/update-student/:id").put((req, res, next) => {
 });
 
 // Delete student
-studentRoute.route("/delete-student/:id").delete((req, res, next) => {
-  StudentModel.findByIdAndRemove(req.params.id, (error, data) => {
+studenDiseniotRoute.route("/delete-student-disenio/:id").delete((req, res, next) => {
+  StudentDisenioModel.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -90,4 +90,4 @@ studentRoute.route("/delete-student/:id").delete((req, res, next) => {
   });
 });
 
-module.exports = studentRoute;
+module.exports = studenDiseniotRoute;
