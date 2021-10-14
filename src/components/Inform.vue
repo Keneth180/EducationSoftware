@@ -1,6 +1,16 @@
 <template>
   <div class="container-inform">
     <h3>Informe general del curso</h3>
+    <section>
+      <p>
+        <b
+          >Bienvenido al apartado de informe general. Aquí puede verificar las
+          notas de sus estudiantes en cada uno de los cursos que dicta. A su
+          vez, puede verificar el estado de los estudiantes mediante las
+          opciones de "Aprobado" y "Reprobado".</b
+        >
+      </p>
+    </section>
     <h4>Estructura de Datos</h4>
     <table class="table">
       <thead>
@@ -105,7 +115,9 @@
                 4).toFixed(1)
             }}
           </td>
-          <td>{{ studentDisenio.definitiva >= 3 ? "Aprobado" : "Reprobado" }}</td>
+          <td>
+            {{ studentDisenio.definitiva >= 3 ? "Aprobado" : "Reprobado" }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -200,6 +212,12 @@ td:nth-child(6),
 td:nth-child(7),
 td:nth-child(8) {
   text-align: center;
+}
+section {
+  background-color: rgb(233, 197, 197);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  box-shadow: 10px 5px 5px #0b0940;
 }
 
 @media only screen and (min-width: 768px) {

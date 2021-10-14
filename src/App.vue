@@ -14,17 +14,14 @@
             <a class="navbar-brand float-left">Education Software</a>
             <ul class="nav navbar-nav flex-row float-right">
               <li class="nav-item">
-                <router-link class="nav-link pr-3" to="/">Inicio</router-link>
+                <router-link class="nav-link pr-3" to="/home"
+                  >Inicio</router-link
+                >
               </li>
 
               <li class="nav-item">
                 <router-link class="nav-link" to="/inform"
                   >Informe general</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link" to="/register-students"
-                  >Iniciar Sesión</router-link
                 >
               </li>
             </ul>
@@ -41,6 +38,16 @@
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2021 Education Software
       </div>
+      <div class="pie-pagina">
+        <div class="acerca">
+          <h4>Acerca de nosotros</h4>
+          <p class="text-info">Desarrollamos software educativo y con otros fines.</p>
+        </div>
+        <div class="info">
+          <h4>Información</h4>
+          <p class="text-info">Para más información, puede contactar al correo education_software@gmail.com</p>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -53,14 +60,15 @@
   font-family: "Noto Sans Display", sans-serif;
 }
 nav {
-  padding-bottom: 30px !important;
+  position: relative !important;
+  top: 0 !important;
+  width: 100% !important;
 }
 a.nav-link {
   color: rgb(2, 2, 2) !important;
   padding: 10px;
   border-radius: 4px;
   background-color: rgb(230, 207, 207);
-
 }
 a.nav-link:hover {
   background-color: #0b0940;
@@ -99,11 +107,17 @@ p {
   margin-top: 10px;
 }
 footer {
-  padding-top: 100px;
+  width: 100%;
+  height: 350px;
 }
 footer.bg-light {
   margin-top: 50px;
   background-color: #010326 !important;
+}
+.pie-pagina{
+  display: flex;
+  justify-content: space-between;
+
 }
 footer.text-center,
 .text-start {

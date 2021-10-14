@@ -24,7 +24,8 @@ const studentAPI = require("../backend/routes/students.route");
 const notas = require("../backend/routes/nota.route");
 const studentProgAPI = require("../backend/routes/studentProg.route");
 const studentDisenioAPI = require("../backend/routes/studentDisenio.route");
-// const grupoAPI = require("../backend/routes/grupos.route");
+const inicioSesionAPI = require("../backend/routes/iniciarSesion.route");
+
 const app = express();
 app.use(bodyParser.json());
 app.use(
@@ -39,6 +40,7 @@ app.use("/api", studentAPI);
 app.use("/api/notas", notas);
 app.use("/api-prog" ,studentProgAPI);
 app.use("/api-disenio" ,studentDisenioAPI);
+app.use("/api-login" ,inicioSesionAPI);
 
 
 // Create port

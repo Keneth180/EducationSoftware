@@ -1,10 +1,23 @@
 <template>
   <div class="materias-contenedor">
     <h2 id="titular">Materia: Estructura de Datos</h2>
+    <section>
+      <p>
+        <b
+          >En este apartado administra las notas y estudiantes. En el formulario
+          presente a continuación puede registrar estudiantes que ingresan a su
+          curso o que por algún motivo no pudo ingresar anteriormente. Debajo
+          del formulario encuentra una tabla con la información de los
+          estudiantes que están en este curso. Puede notar que en la tabla hay
+          dos botones: "Administrar notas" que se encarga de asignar las notas y
+          "Eliminar estudiante" que le permitirá eliminar al estudiante de la
+          fila de la tabla.</b
+        >
+      </p>
+    </section>
     <div class="container-register">
       <h3>Registro de estudiantes</h3>
       <form @submit.prevent="handleSubmitForm">
-        <h2>Registrar estudiantes</h2>
         <div class="form-group">
           <label for="name">Nombre completo</label>
           <input
@@ -28,35 +41,12 @@
             v-model="student.codigo"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <div class="btn-registro">
+          <button id="btn-registrar" type="submit" class="btn btn-primary">
+            Registrar
+          </button>
+        </div>
       </form>
-      <!-- <form @submit.prevent="handleUpdateForm">
-        <h2>Registrar estudiantes</h2>
-        <div class="form-group">
-          <label for="name">Nombre completo</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            autocomplete="off"
-            aria-describedby="nameHelp"
-            placeholder="Ingresa tu nombre"
-            v-model="student.name"
-          />
-        </div>
-        <div class="form-group">
-          <label for="codigo">Código de estudiante</label>
-          <input
-            type="text"
-            class="form-control"
-            autocomplete="off"
-            id="codigo"
-            placeholder="Ingrese su código"
-            v-model="student.codigo"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
-      </form> -->
     </div>
     <table class="table">
       <thead>
@@ -87,7 +77,7 @@
                   student.nota2 +
                   student.nota3 +
                   student.nota4) /
-                4)
+                4).toFixed(1)
             }}
           </td>
 
@@ -95,7 +85,7 @@
             <router-link
               :to="{ name: 'edit', params: { id: student._id } }"
               class="btn btn-warning"
-              >Actualizar notas
+              >Administrar notas
             </router-link>
           </td>
           <td>
@@ -251,7 +241,6 @@ th {
   padding: 3px;
 }
 
-
 thead,
 tfoot {
   color: rgb(9, 53, 47);
@@ -262,6 +251,9 @@ tfoot {
 
 tbody {
   color: rgb(8, 58, 50);
+}
+#btn-registrar {
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {

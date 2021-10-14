@@ -1,6 +1,20 @@
 <template>
   <div class="materias-contenedor">
     <h2 id="titular">Materia: Programación II</h2>
+    <section>
+      <p>
+        <b
+          >En este apartado administra las notas y estudiantes. En el formulario
+          presente a continuación puede registrar estudiantes que ingresan a su
+          curso o que por algún motivo no pudo ingresar anteriormente. Debajo
+          del formulario encuentra una tabla con la información de los
+          estudiantes que están en este curso. Puede notar que en la tabla hay
+          dos botones: "Administrar notas" que se encarga de asignar las notas y
+          "Eliminar estudiante" que le permitirá eliminar al estudiante de la
+          fila de la tabla.</b
+        >
+      </p>
+    </section>
     <div class="container-register">
       <form @submit.prevent="handleSubmitForm">
         <h2>Registro de estudiantes</h2>

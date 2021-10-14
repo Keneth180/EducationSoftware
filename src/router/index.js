@@ -5,8 +5,13 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 const routes = [
-  {
+    {
     path: "/",
+    name: "inicio-sesion",
+    component: () => import("../components/IniciarSesion"),
+  },
+  {
+    path: "/home",
     name: "home",
     component: () => import("../components/Home"),
   },
