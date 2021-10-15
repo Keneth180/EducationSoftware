@@ -16,11 +16,6 @@ const routes = [
     component: () => import("../components/Home"),
   },
   {
-    path: "/register",
-    name: "register",
-    component: () => import("../components/Register"),
-  },
-  {
     path: "/inform",
     name: "inform",
     component: () => import("../components/Inform"),
@@ -39,16 +34,6 @@ const routes = [
     path: "/programacion",
     name: "programacion",
     component: () => import("../components/Programacion"),
-  },
-  {
-    path: "/register-students",
-    name: "register-students",
-    component: () => import("../components/RegisterStudents"),
-  },
-  {
-    path: "/add/:id",
-    name: "add",
-    component: () => import("../components/AgregarNotas"),
   },
   {
     path: "/edit/:id",

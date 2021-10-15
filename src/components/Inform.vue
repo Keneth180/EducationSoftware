@@ -135,7 +135,7 @@ export default {
     };
   },
   created() {
-    let apiURL = "http://localhost:4000/api";
+    let apiURL = "https://education-software.herokuapp.com/api";
     axios
       .get(apiURL)
       .then((res) => {
@@ -145,7 +145,7 @@ export default {
         console.log(error);
       });
 
-    let apiProgURL = "http://localhost:4000/api-prog";
+    let apiProgURL = "https://education-software.herokuapp.com/api-prog";
     axios
       .get(apiProgURL)
       .then((res) => {
@@ -155,7 +155,7 @@ export default {
         console.log(error);
       });
 
-    let apiDisenioURL = "http://localhost:4000/api-disenio";
+    let apiDisenioURL = "https://education-software.herokuapp.com/api-disenio";
     axios
       .get(apiDisenioURL)
       .then((res) => {

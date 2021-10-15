@@ -68,7 +68,7 @@ export default {
     };
   },
   created() {
-    let apiURLVista = "http://localhost:4000/api-prog";
+    let apiURLVista = "https://education-software.herokuapp.com/api-prog";
     axios
       .get(apiURLVista)
       .then((res) => {
@@ -77,7 +77,7 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-    let apiURL = `http://localhost:4000/api-prog/edit-student-prog/${this.$route.params.id}`;
+    let apiURL = `https://education-software.herokuapp.com/api-prog/edit-student-prog/${this.$route.params.id}`;
 
     axios.get(apiURL).then((res) => {
       this.studentProg = res.data;
@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     handleUpdateForm() {
-      let apiURL = `http://localhost:4000/api-prog/update-student-prog/${this.$route.params.id}`;
+      let apiURL = `https://education-software.herokuapp.com/api-prog/update-student-prog/${this.$route.params.id}`;
 
       axios
         .put(apiURL, this.studentProg)

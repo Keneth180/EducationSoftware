@@ -48,15 +48,13 @@ export default {
   },
   methods: {
     buscarUsuario() {
-      let apiURL = "http://localhost:4000/api-login/users";
+      let apiURL = "https://education-software.herokuapp.com/api-login/users";
       console.log("Se ejecuta la función Buscar");
       axios.get(apiURL).then((res) => {
         console.log(this.users);
         this.users = res.data;
 
         this.users.forEach((value) => {
-          // console.log(value.username);
-          // console.log(value.password);
           if (this.form.username === value.username) {
             console.log("Usuario si existe");
             if (this.form.password === value.password) {

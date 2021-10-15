@@ -121,7 +121,7 @@ export default {
     };
   },
   created() {
-    let apiURL = "http://localhost:4000/api";
+    let apiURL = "https://education-software.herokuapp.com/api";
     axios
       .get(apiURL)
       .then((res) => {
@@ -133,7 +133,7 @@ export default {
   },
   methods: {
     deleteStudent(id) {
-      let apiURL = `http://localhost:4000/api/delete-student/${id}`;
+      let apiURL = `https://education-software.herokuapp.com/api/delete-student/${id}`;
       let indexOfArrayItem = this.Students.findIndex((i) => i._id === id);
 
       if (window.confirm("Está seguro que desea eliminar el estudiante?")) {
@@ -148,7 +148,7 @@ export default {
       }
     },
     handleUpdateForm(id) {
-      let apiURL = `http://localhost:4000/api/update-student/${id}`;
+      let apiURL = `https://education-software.herokuapp.com/api/update-student/${id}`;
 
       this.axios
         .put(apiURL, this.student)
@@ -161,7 +161,7 @@ export default {
         });
     },
     handleSubmitForm() {
-      let apiURL = "http://localhost:4000/api/create-student";
+      let apiURL = "https://education-software.herokuapp.com/api/create-student";
 
       axios
         .post(apiURL, this.student)

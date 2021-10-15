@@ -116,7 +116,7 @@ export default {
     };
   },
   created() {
-    let apiURL = "http://localhost:4000/api-disenio";
+    let apiURL = "https://education-software.herokuapp.com/api-disenio";
     axios
       .get(apiURL)
       .then((res) => {
@@ -128,7 +128,7 @@ export default {
   },
   methods: {
     deleteStudent(id) {
-      let apiURL = `http://localhost:4000/api-disenio/delete-student-disenio/${id}`;
+      let apiURL = `https://education-software.herokuapp.com/api-disenio/delete-student-disenio/${id}`;
       let indexOfArrayItem = this.StudentsDisenio.findIndex(
         (i) => i._id === id
       );
@@ -145,7 +145,7 @@ export default {
       }
     },
     handleUpdateForm(id) {
-      let apiURL = `http://localhost:4000/api-disenio/update-student-disenio/${id}`;
+      let apiURL = `https://education-software.herokuapp.com/api-disenio/update-student-disenio/${id}`;
 
       this.axios
         .put(apiURL, this.studentDisenio)
@@ -158,7 +158,7 @@ export default {
         });
     },
     handleSubmitForm() {
-      let apiURL = "http://localhost:4000/api-disenio/create-student-disenio";
+      let apiURL = "https://education-software.herokuapp.com/api-disenio/create-student-disenio";
 
       axios
         .post(apiURL, this.studentDisenio)
